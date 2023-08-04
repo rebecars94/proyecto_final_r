@@ -1,0 +1,16 @@
+---
+title: "sesion11_intro_shiny"
+author: "Kimberley Isabel Orozco Cornejo"
+date: "2023-07-30"
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+library(shiny)
+```
