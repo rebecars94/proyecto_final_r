@@ -1,0 +1,93 @@
+---
+title: "Practica programada 2"
+author: "Rebeca Rodriguez Solano"
+date: "2023-08-02"
+output:
+  html_document: default
+always_allow_html: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(leaflet)
+library(readr)
+library(readxl)
+library(writexl)
+library(dplyr)
+library(janitor)
+library(stringr)
+library(gt)
+library(datasets)
+```
+
+Proyecto Final
+
+Programación en R para Análisis de Datos II
+
+Objetivo:
+
+El objetivo del proyecto final es generar un reporte analítico de manera colaborativa utilizando las herramien-
+tas aprendidas en los cursos de programación en R I y II. Asegúrense de que su reporte sea fácil de leer y
+
+entender, incluyendo explicaciones claras de sus hallazgos. Se debe hacer uso de R Markdown para crear el
+informe coherente que incluya tanto código como texto con explicaciones cuando corresponda.
+A continuación se escribe la guía para la realización del proyecto:
+1. Configuración de Git y Github: (15pts)
+El trabajo se llevará a cabo en grupos de máximo 3 personas.
+• 1.1 Una de las integrantes creará un repositorio de github y añadir a las otras 2 personas como
+colaboradoras. El nombre del repositorio deberá ser algo como proyecto_final_programacion_2. Cada
+una deberá clonar el repositorio de manera local y autentificarse con git. (2pts)
+• 1.2 Este repositorio en GitHub alojará el código relacionado con el proyecto. Se evaluará el uso de
+tiquetes para dividir las tareas, la realización de commits regulares con descripciones claras de lo que
+cada commit añade, así como el uso correcto de las solicitudes de fusión. (10pts)
+• 1.3 Prepare el README del proyecto. Adjunto encontrará una guía para la información básica que
+debe añadir en su README. (3pts)
+2. Preparación y limpieza de Datos: (22pts)
+En este proyecto trabajaremos con 2 conjuntos de datos sobre terremotos relacionados entre sí por medio de
+la columna ID. Los mismos deben leerse directamente con read_csv de las siguientes direcciones:
+• https://raw.githubusercontent.com/isa229/programacion_analisis_datos_ii/main/terremotos_
+profundidad.csv
+• https://raw.githubusercontent.com/isa229/programacion_analisis_datos_ii/main/terremotos_
+magnitud.csv
+El conjunto de datos muestra datos reportados para aquellos movimientos telúricos con una magNitud mayor
+a 5.5 desde 1965 hasta el 2016.
+Para cada uno de estos conjuntos de datos, use algunas de las técnicas aprendidas sobre preparación y
+limpieza de datos para:
+• 2.1 Realiza la lectura de los datos en R (2pts)
+• 2.2 Limpiar nombre de las variables (traducir al español) (4pts)
+• 2.3 Eliminación de filas duplicadas (si existen). (2pts)
+• 2.4 Transformación de los tipos de variables: para el conjunto de datos terremotos_profundidad use
+lubridate para transformar la fecha de carácter a un objetivo tipo fecha (2pts)
+
+1
+
+• 2.5 Transformación de datos: para el conjunto de datos terremotos_profundidad examine cuáles son los
+valores distintos que hay en la variable “Type” o tipo. Use mutate para unificar valores si es necesario
+(4pts)
+• 2.6 Creación de columnas adicionales: para el conjunto de datos terremotos_profundidad cree 2 nuevas
+columnas: una que contenga el mes del terremoto, y otra que contenga el año del terremoto (4pts)
+• 2.7 Unir ambos conjuntos de datos en un solo conjunto de datos llamado datos_terremotos. Para esto
+use un left_join o un right_join, la llave que une ambos datasets es la columna llamada ID en los
+conjuntos de datos originales. (2pts)
+• 2.8 Eliminar columnas vacías e innecesarias: Elimine aquellas columnas vacías o que no están aportando
+ninguna información. (2pts)
+3. Análisis de Datos y Visualización: (39pts)
+En esta sección se utilizarán diversas técnicas de análisis de datos para explorar el conjunto de datos, usando
+paquetes como gt, ggplot2, plotly y leaflet. A continuación se describen los pasos necesarios:
+• 3.1 Hacer un pequeño análisis sobre variación para la variable magnitud. Puede usar ggplot2 o plolty,
+así como lo aprendido en el cuatrimestre pasado (8pts)
+• 3.2 Haga un pequeño análisis sobre variación para la variable Tipo. Puede usar ggplot2 o plotly, así
+como lo aprendido en el cuatrimestre pasado. (8pts)
+• 3.3 Filtre los datos de los terremotos para obtener solamente aquellos que se hayan dado entre las
+coordenadas de latitud 8 y 11 Norte con Longitud entre -85 y -82 Oeste. Estos son los movimiento
+telúricos que se dieron en Costa Rica. Cuántos fueron? (3pts)
+• 3.4 Filtre los datos de terremotos de Costa Rica para obtener los 10 terremotos con magnitud más
+altas en Costa Rica. Muestre estos datos en una tabla de gt que muestre el mes, año, latitud, longitud,
+magnitud y profundidad del terremoto. A esta tabla añada título, subtítulo, y al menos un pie de
+tabla (10pts)
+• 3.5 Muestre los 10 terremotos con mayor magnitud obtenidos anteriormente en un mapa de leaflet.
+Como popup coloque el año del terremoto. (10pts)
+En caso de cualquier duda respecto a las instrucciones, recuerde que puede consultarlo en clase o por correo.
+Muchísimos éxitos!
