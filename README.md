@@ -10,3 +10,5 @@ integrantes del grupo son:
 • Fabiana Hidalgo Fallas
 
 El trabajo consiste del procesamiento y análisis de dos conjuntos de datos sobre terremotos provenientes del USGS (Servicio Geológico de los Estados Unidos): registros de terremotos con magnitud mayor a 5.5 desde 1965 al 2016.
+
+
